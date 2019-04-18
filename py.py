@@ -1,5 +1,5 @@
 import discord
-
+import os 
 
 client = discord.Client()
 
@@ -25,4 +25,5 @@ if message.content.startswith("SD")
     member = discord.utils.get(client.get_all_members(), id=message.content[4:22])
     await client.send_message(member, "앤이 보낸 편지 : " + message.content[23:])
 
-client.run('NTQ3Nzk4MjcyMDk4NDM1MDk5.D08Anw._xqgTpX4wMoK1w7D1EnUOjFGmGw')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
